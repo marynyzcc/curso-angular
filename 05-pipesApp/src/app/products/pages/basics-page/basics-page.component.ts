@@ -10,4 +10,5 @@ export class BasicsPageComponent {
   public nameUpper: string = 'JANE';
   public fullName: string = 'JaNE DoE';
 
+  public customDate: Date = new Date();
 }

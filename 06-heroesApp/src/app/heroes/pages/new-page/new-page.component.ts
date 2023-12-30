@@ -41,6 +41,18 @@ export class NewPageComponent {
 
     if( this.heroForm.invalid )  return;
 
-    // this.heroesService.updateHero();
+    if( this.currentHero.id ) {
+      this.heroesService.updateHero(this.currentHero)
+        .subscribe( hero => {
+          //TODO: mostrar snackbar
+        });
+
+      return;
+    }
+
+    this.heroesService.addHero( this.currentHero )
+      .subscribe( hero => {
+        //TODO: mostrar snackbar, y navegar a /heroes/edit/ hero.if
+      });
   }
 }

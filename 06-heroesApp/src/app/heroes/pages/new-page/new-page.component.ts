@@ -21,7 +21,14 @@ export class NewPageComponent {
   });
 
   public publishers = [
-    { id: 'DC Comics', desc: 'CD - Comics' },
+    { id: 'DC Comics', desc: 'DC - Comics' },
     { id: 'Marvel Comics', desc: 'Marvel - Comics' },
   ];
+
+  onSubmit() {
+    console.log({
+      formIsValid: this.heroForm.valid,
+      value: this.heroForm.getRawValue()
+    });
+  }
 }

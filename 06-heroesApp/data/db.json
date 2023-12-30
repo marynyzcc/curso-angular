@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "usuario": "John Doe",
-      "email": "john.due@gmail.com"
+      "user": "Jane Doe",
+      "email": "jane.doe@gmail.com"
     }
   ],
   "heroes": [
@@ -53,8 +53,7 @@
       "publisher": "DC Comics",
       "alter_ego": "Princess Diana",
       "first_appearance": "All Star Comics #8",
-      "characters": "Princess Diana",
-      "alt_img": "https://static.posters.cz/image/750/pinturas-sobre-lienzo-dc-comics-wonder-woman-sparkle-i111183.jpg"
+      "characters": "Princess Diana"
     },
     {
       "id": "dc-martian",
@@ -167,15 +166,6 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
-    },
-    {
-      "id": "6Brr-mD",
-      "superhero": "Jane Doe",
-      "publisher": "Marvel Comics",
-      "alter_ego": "Strider",
-      "first_appearance": "Comic Udemy 2023 #1",
-      "characters": "Jane Doe",
-      "alt_img": "https://cdn-icons-png.flaticon.com/512/4123/4123763.png"
     }
   ]
 }

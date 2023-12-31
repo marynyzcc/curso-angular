@@ -50,7 +50,9 @@ export class DynamicPageComponent {
     return null;
   }
 
-
+  onDeleteFavourite(index: number) {
+    this.favouriteGames.removeAt(index);
+  }
 
   onSubmit() {
     if(this.myForm.invalid) {

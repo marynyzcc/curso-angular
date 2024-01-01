@@ -5,7 +5,8 @@ import { Observable, delay, of } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class EmailValidator implements AsyncValidator {
 
-  validate(control: AbstractControl<any, any>): Observable<ValidationErrors | null> {
+  /* validate(control: AbstractControl): Observable<ValidationErrors | null> {
+
     const email = control.value;
     console.log({email});
 
@@ -14,6 +15,37 @@ export class EmailValidator implements AsyncValidator {
     }).pipe(
       delay(2000)
     );
+  } */
+
+  validate(control: AbstractControl): Observable<ValidationErrors | null> {
+    const email = control.value;
+
+    const httpCallObservable = new Observable<ValidationErrors|null>((subscriber) => {
+      console.log({email});
+
+      if(email === 'jane@google.com') {
+        subscriber.next({emailTaken: true});  // next() emite el valor pasado por argumento
+        subscriber.complete();  // complete() realiza la desuscripcion del observable,
+                                // deja de emitir valores
+      }
+
+      subscriber.next(null);
+      subscriber.complete();
+    }).pipe(
+      delay(3000)
+    );;
+
+    return httpCallObservable;
   }
 
 }
+
+/* return this.http.get<any[]>(`http://localhost:3000/users?q=${email}`)
+  .pipe(
+    // delay(3000),
+    map( resp => {
+      return (resp.length === 0)
+        ? null
+        : { emailTaken: true }
+    })
+  ); */
